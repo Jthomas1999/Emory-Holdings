@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emory Holdings LLC - Chicago Home Renovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            transition: all 0.3s;
+        }
+        .nav-link.active {
+            color: #3b82f6; /* blue-500 */
+            border-bottom: 2px solid #3b82f6;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .gallery-item {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header and Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-2">
+                <!-- SVG Logo -->
+                <svg class="h-12 w-auto" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+                    <title>Emory Holdings LLC Logo</title>
+                    <defs>
+                        <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#EBF8FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Skyline -->
+                    <path d="M 45 60 V 30 L 50 25 L 55 30 V 60" fill="#41B6E6" /> <!-- Light Blue Building -->
+                    <path d="M 60 60 V 20 L 62 18 L 64 20 V 60" fill="#001F5B" /> <!-- Dark Blue Building -->
+                    <path d="M 70 60 V 35 L 75 32 L 80 35 V 60" fill="#41B6E6" /> <!-- Light Blue Building -->
+                    <path d="M 85 60 V 25 L 87 23 L 89 25 L 89 40 L 91 42 L 91 25 L 93 23 L 95 25 V 60 " fill="#E4002B"/> <!-- Red Building -->
+                    <!-- Roof -->
+                    <path d="M 0 60 L 60 10 L 120 60 Z" fill="#001F5B" /> <!-- Dark Blue Roof -->
+                    <!-- House Body -->
+                    <path d="M 48 60 V 45 H 72 V 60" fill="white" />
+                    <!-- Window -->
+                    <path d="M 55 50 H 65 V 57 H 55 Z" fill="#41B6E6" />
+                    <line x1="60" y1="50" x2="60" y2="57" stroke="white" stroke-width="1"/>
+                    <line x1="55" y1="53.5" x2="65" y2="53.5" stroke="white" stroke-width="1"/>
+                </svg>
+                <span class="text-2xl font-bold text-gray-900 hidden sm:inline">Emory Holdings LLC</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link text-gray-600 hover:text-blue-500 pb-1 active">Home</a>
+                <a href="#team" class="nav-link text-gray-600 hover:text-blue-500 pb-1">Our Team</a>
+                <a href="#portfolio" class="nav-link text-gray-600 hover:text-blue-500 pb-1">Past Work</a>
+            </div>
+             <a href="#contact" class="hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Contact Us</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#home" class="nav-link block text-gray-600 hover:text-blue-500 py-2 active">Home</a>
+            <a href="#team" class="nav-link block text-gray-600 hover:text-blue-500 py-2">Our Team</a>
+            <a href="#portfolio" class="nav-link block text-gray-600 hover:text-blue-500 py-2">Past Work</a>
+            <a href="#contact" class="block bg-blue-600 text-white font-semibold text-center mt-2 px-5 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home / About Page -->
+        <section id="home" class="page active">
+            <div class="bg-white">
+                 <div class="container mx-auto px-6 py-16 md:py-24">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <span class="text-blue-600 font-semibold">CHICAGO-BASED & MINORITY-OWNED</span>
+                            <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4 leading-tight">Transforming Chicago Homes, One Project at a Time.</h1>
+                            <p class="text-gray-600 text-lg mb-8">Emory Holdings LLC is your trusted partner for all home renovation needs. From minor updates to complete gut rehabilitations, we deliver exceptional craftsmanship and unparalleled service. We bring dreams to life with integrity and precision.</p>
+                            <a href="#contact" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Get a Free Quote</a>
+                        </div>
+                        <div>
+                            <img src="https://placehold.co/600x400/e2e8f0/334155?text=Modern+Kitchen+Renovation" alt="Modern kitchen renovation" class="rounded-lg shadow-xl w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 py-16 md:py-24">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-4">Our Commitment</h2>
+                    <p class="text-gray-600">As a cornerstone of the Chicago community, we are dedicated to building more than just beautiful spaces. We build lasting relationships with our clients based on transparency, communication, and a shared vision for their homes. Our team handles every project with the care it deserves, ensuring your renovation journey is smooth and rewarding.</p>
+                </div>
+
+                <div class="text-center max-w-3xl mx-auto mt-16">
+                    <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
+                    <p class="text-gray-600">Our mission extends beyond renovation. We are dedicated to revitalizing Chicago's communities by transforming blighted properties into beautiful, high-quality homes. Through expert craftsmanship and a commitment to urban renewal, we aim to build lasting value for our clients and breathe new life into the neighborhoods we serve.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mt-16 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2">Small Renovations</h3>
+                        <p class="text-gray-600">Perfect for refreshing a room or updating fixtures. We bring the same level of detail to small jobs as we do to our largest projects.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2">Major Remodels</h3>
+                        <p class="text-gray-600">Kitchens, bathrooms, basements, and additions. We manage the entire process to create a space that is both functional and beautiful.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2">Full Gut Rehabs</h3>
+                        <p class="text-gray-600">Transforming properties from the inside out. Our comprehensive approach ensures a seamless execution from design to completion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Page -->
+        <section id="team" class="page">
+            <div class="container mx-auto px-6 py-16 md:py-24">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h1 class="text-4xl font-bold mb-4">Meet Our Experts</h1>
+                    <p class="text-gray-600 text-lg">We're a team of passionate builders, designers, and project managers dedicated to making your vision a reality. Our collective experience is the foundation of our success.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <img src="https://placehold.co/200x200/a5b4fc/1e293b?text=J.+Emory" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200" alt="Team Member 1">
+                        <h3 class="text-xl font-bold">James Emory</h3>
+                        <p class="text-blue-600 font-semibold mb-2">Founder & Lead Contractor</p>
+                        <p class="text-gray-600">With over 20 years in the construction industry, James leads every project with a hands-on approach, ensuring quality and client satisfaction.</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <img src="https://placehold.co/200x200/a5b4fc/1e293b?text=M.+Chen" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200" alt="Team Member 2">
+                        <h3 class="text-xl font-bold">Maria Chen</h3>
+                        <p class="text-blue-600 font-semibold mb-2">Project Manager</p>
+                        <p class="text-gray-600">Maria is the organizational powerhouse behind our operations, keeping every project on schedule and on budget from start to finish.</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <img src="https://placehold.co/200x200/a5b4fc/1e293b?text=D.+Smith" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200" alt="Team Member 3">
+                        <h3 class="text-xl font-bold">David Smith</h3>
+                        <p class="text-blue-600 font-semibold mb-2">Lead Carpenter & Finishes Expert</p>
+                        <p class="text-gray-600">A true craftsman, David's attention to detail in carpentry and finishes ensures every space we create is flawless and built to last.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Work / Portfolio Page -->
+        <section id="portfolio" class="page">
+            <div class="container mx-auto px-6 py-16 md:py-24">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h1 class="text-4xl font-bold mb-4">Our Portfolio</h1>
+                    <p class="text-gray-600 text-lg">We let our work speak for itself. Browse our gallery of recently completed projects to see the quality and care we put into every detail.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item">
+                        <img src="https://placehold.co/600x400/e0f2fe/083344?text=Lincoln+Park+Kitchen" class="w-full h-56 object-cover" alt="Lincoln Park Kitchen Remodel">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Lincoln Park Kitchen</h3>
+                            <p class="text-gray-600 mt-2">A full kitchen gut rehab featuring custom cabinetry, quartz countertops, and a functional island for entertaining.</p>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item">
+                        <img src="https://placehold.co/600x400/dcfce7/14532d?text=Wicker+Park+Bathroom" class="w-full h-56 object-cover" alt="Wicker Park Bathroom Oasis">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Wicker Park Bathroom Oasis</h3>
+                            <p class="text-gray-600 mt-2">This project transformed a dated bathroom into a spa-like retreat with a walk-in shower and modern finishes.</p>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item">
+                        <img src="https://placehold.co/600x400/fef9c3/713f12?text=Bronzeville+Rehab" class="w-full h-56 object-cover" alt="Bronzeville Full Home Rehab">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Bronzeville Full Home Rehab</h3>
+                            <p class="text-gray-600 mt-2">A complete interior and exterior renovation that brought new life to a classic Chicago Greystone.</p>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item">
+                        <img src="https://placehold.co/600x400/fee2e2/991b1b?text=Basement+Renovation" class="w-full h-56 object-cover" alt="South Loop Basement Renovation">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">South Loop Basement</h3>
+                            <p class="text-gray-600 mt-2">We converted an unfinished basement into a family-friendly entertainment space with a custom bar.</p>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 5 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item">
+                        <img src="https://placehold.co/600x400/f3e8ff/581c87?text=Modern+Living+Room" class="w-full h-56 object-cover" alt="Lakeview Living Room Update">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Lakeview Living Room Update</h3>
+                            <p class="text-gray-600 mt-2">New hardwood flooring, custom built-ins, and a contemporary fireplace created a cozy and stylish living area.</p>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 6 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item">
+                        <img src="https://placehold.co/600x400/ecfdf5/065f46?text=Exterior+Deck" class="w-full h-56 object-cover" alt="Rooftop Deck Project">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Rooftop Deck Project</h3>
+                            <p class="text-gray-600 mt-2">This new rooftop deck provides stunning city views and an ideal space for outdoor living and gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section (Common for all pages) -->
+        <section id="contact" class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 py-16 md:py-24 text-center">
+                 <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+                 <p class="text-gray-300 max-w-2xl mx-auto mb-8">Let's discuss your vision. Contact us today for a free, no-obligation consultation and quote. We're excited to learn how we can help you create the home of your dreams.</p>
+                 <a href="mailto:contact@emoryholdings.com" class="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-200 transition duration-300">contact@emoryholdings.com</a>
+                 <p class="mt-6 text-gray-400">Or call us at: (312) 555-0199</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-6 py-6 text-center">
+            <p>&copy; 2024 Emory Holdings LLC. All Rights Reserved.</p>
+            <p class="text-sm mt-1">Proudly Serving the Greater Chicago Area.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link, header a[href="#home"]');
+            const pages = document.querySelectorAll('.page');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Function to handle navigation
+            const navigate = (hash) => {
+                // Default to #home if hash is empty or invalid
+                if (!hash || !document.querySelector(hash)) {
+                    hash = '#home';
+                }
+                
+                // Update pages
+                pages.forEach(page => {
+                    if ('#' + page.id === hash) {
+                        page.classList.add('active');
+                    } else {
+                        page.classList.remove('active');
+                    }
+                });
+
+                // Update nav links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    if (link.getAttribute('href') === hash) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+
+
+                // Close mobile menu on navigation
+                mobileMenu.classList.add('hidden');
+                
+                // Scroll to top of page, unless it's the initial load on a hash
+                if (window.pageYOffset > 0) {
+                   window.scrollTo(0, 0);
+                }
+            };
+
+            // Handle clicks on nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const hash = this.getAttribute('href');
+                    navigate(hash);
+                    // Update URL hash without jumping
+                    history.pushState(null, null, hash);
+                });
+            });
+
+            // Handle mobile menu toggle
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function() {
+                navigate(window.location.hash);
+            });
+
+            // Initial page load
+            navigate(window.location.hash);
+        });
+    </script>
+</body>
+</html>
+
